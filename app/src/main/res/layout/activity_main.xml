@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="login"
+            type="com.juniper.loading.mvvmexample.viewmodel.UserModel">
+
+        </variable>
+        <variable
+            name="userloginevent"
+            type="com.juniper.loading.mvvmexample.commands.UserLogin">
+        </variable>
+
+    </data>
+<LinearLayout
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.juniper.loading.mvvmexample.MainActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@{login.emaihintl}"
+        android:id="@+id/emailid"
+        android:text="@={login.email}"
+
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@{login.passwordhint}"
+        android:id="@+id/passid"
+        android:text="@={login.password}"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:onClick="@{(v)->userloginevent.onClickLogin()}"
+        />
+
+</LinearLayout>
+</layout>
